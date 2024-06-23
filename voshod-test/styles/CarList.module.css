@@ -1,0 +1,78 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif; /* Используем шрифт Roboto */
+}
+
+.carList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.resetButton {
+  margin: 20px 0;
+  padding: 10px 20px;
+  background-color: #ffca28; /* Желтая кнопка */
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.resetButton:hover {
+  background-color: #ffa000; /* Темно-желтая кнопка при наведении */
+}
+
+.h1 {
+  font-size: 2.5em;
+  color: #f57f17; /* Оранжевый цвет заголовка */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.5em;
+  color: #f57f17; /* Оранжевый цвет заголовка */
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1em;
+  color: #616161; /* Темный серый цвет текста */
+}
+
+.btn-primary {
+  background-color: #ffca28; /* Желтая кнопка */
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #ffa000; /* Темно-желтая кнопка при наведении */
+}
