@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import styles from '../../styles/CarDetail.module.css';
+import styles from '../styles/CarDetail.module.css';
 
 interface Car {
   id: number;
@@ -59,41 +59,58 @@ const CarDetail = (): JSX.Element => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: '40px',
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerPadding: '20px',
+        },
+      },
+    ],
   };
 
   return (
     <div className={styles.container}>
-      <button onClick={() => router.back()} className={styles.button}>
+      <button onClick={() => router.back()} className={styles.backButton}>
         Назад
       </button>
-      <h1 className={styles.h1}>
+      <h1 className={styles.title}>
         {car.brand} {car.model}
       </h1>
-      {car.images && car.images.length > 0 ? (
-        <Slider {...settings}>
-          {car.images.map((img) => (
-            <div key={img.id}>
-              <Image
-                src={img.image}
-                alt={`${car.brand} ${car.model}`}
-                width={690}
-                height={656}
-                priority
-                placeholder='blur'
-                blurDataURL='data:image/svg+xml;base64,...'
-              />
-            </div>
-          ))}
-        </Slider>
-      ) : (
-        <p>Изображения не найдены</p>
-      )}
-      <p className={styles.p}>Price: {car.price}</p>
-      {car.tarif && car.tarif.length > 0 && (
-        <p className={styles.p}>Tariff: {car.tarif.join(', ')}</p>
-      )}
+      <div className={`card ${styles.card}`}>
+        {car.images && car.images.length > 0 ? (
+          <Slider {...settings} className={styles.slider}>
+            {car.images.map((img) => (
+              <div key={img.id} className={styles.slide}>
+                <Image
+                  src={img.image}
+                  alt={`${car.brand} ${car.model}`}
+                  width={286}
+                  height={180}
+                  priority
+                  className={`card-img-top ${styles.image}`}
+                />
+              </div>
+            ))}
+          </Slider>
+        ) : (
+          <div className={`card-img-top ${styles.noImage}`}>
+            <span>Изображение не найдено</span>
+          </div>
+        )}
+        <div className='card-body'>
+          <p className='card-text'>Price: {car.price}</p>
+          {car.tarif && car.tarif.length > 0 && (
+            <p className='card-text'>Tariff: {car.tarif.join(', ')}</p>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
