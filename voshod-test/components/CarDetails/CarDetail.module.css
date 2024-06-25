@@ -7,7 +7,10 @@
 }
 
 .slider {
-  margin: 20px 0;
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slide {
@@ -17,7 +20,11 @@
 }
 
 .slide img {
-  border-radius: 4px;
+  border-radius: 15px;
+  padding: 10px;
+  width: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .backButton {
@@ -44,8 +51,8 @@
   margin-top: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  width: 18rem;
-  margin: 0 auto; /* Центрирование карточки */
+  width: 50rem;
+  margin: 0 auto;
 }
 
 .card-img-top {
@@ -65,7 +72,12 @@
 .noImage {
   width: 286px;
   height: 180px;
-  background-color: #e9ecef;
+  background-color: #efeee9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img {
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import CarCard from './CarCard';
-import Filters from './Filters';
-import Pagination from './Pagination';
-import styles from '../styles/CarList.module.css';
+import CarCard from '../CarCard/CarCard';
+import Filters from '../Filters/Filters';
+import Pagination from '../Pagination/Pagination';
+import styles from './CarList.module.css';
 
 interface Car {
   id: number;
@@ -138,7 +138,7 @@ const CarList = (): JSX.Element => {
 
   return (
     <div className={styles.container}>
-      <h1>Car Catalog</h1>
+      <h1>Каталог машин</h1>
       <Filters
         brands={brands}
         models={models}

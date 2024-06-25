@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 20px;
   text-align: center;
-  font-family: 'Roboto', sans-serif; 
+  font-family: 'Roboto', sans-serif;
 }
 
 .carList {
@@ -16,7 +16,7 @@
 .resetButton {
   margin: 20px 0;
   padding: 10px 20px;
-  background-color: #ffca28; 
+  background-color: #ffca28;
   color: #000;
   border: none;
   border-radius: 5px;
@@ -25,7 +25,7 @@
 }
 
 .resetButton:hover {
-  background-color: #ffa000; 
+  background-color: #ffa000;
 }
 
 .h1 {
@@ -55,17 +55,17 @@
 
 .card-title {
   font-size: 1.5em;
-  color: #f57f17; 
+  color: #f57f17;
   font-weight: bold;
 }
 
 .card-text {
   font-size: 1em;
-  color: #616161; 
+  color: #616161;
 }
 
 .btn-primary {
-  background-color: #ffca28; 
+  background-color: #ffca28;
   color: #000;
   border: none;
   border-radius: 5px;
@@ -74,5 +74,5 @@
 }
 
 .btn-primary:hover {
-  background-color: #ffa000; 
+  background-color: #ffa000;
 }

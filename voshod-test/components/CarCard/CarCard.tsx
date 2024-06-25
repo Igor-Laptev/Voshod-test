@@ -44,13 +44,13 @@ const CarCard = ({ car }: CarCardProps): JSX.Element => {
         <h5 className='card-title'>
           {car.brand} {car.model}
         </h5>
-        <p className='card-text'>Registration: {car.number}</p>
-        <p className='card-text'>Price: {car.price}</p>
+        <p className='card-text'>Рег.номер: {car.number}</p>
+        <p className='card-text'>Цена: {car.price}</p>
         {car.tarif && car.tarif.length > 0 && (
-          <p className='card-text'>Tariff: {car.tarif.join(', ')}</p>
+          <p className='card-text'>Тариф: {car.tarif.join(', ')}</p>
         )}
         <Link href={`/car/${car.id}`} legacyBehavior>
-          <a className='btn btn-primary'>View Details</a>
+          <a className='btn btn-primary'>Информация</a>
         </Link>
       </div>
     </div>
