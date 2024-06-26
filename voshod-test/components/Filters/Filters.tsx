@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/Filters.module.css';
+import styles from './Filters.module.css';
 
 interface FiltersProps {
   brands: string[];

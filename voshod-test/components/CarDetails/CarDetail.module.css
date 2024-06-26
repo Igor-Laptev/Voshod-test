@@ -1,0 +1,85 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.slider {
+  margin: 25px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  border-radius: 15px;
+  padding: 10px;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.backButton {
+  padding: 10px 20px;
+  background-color: #ffca28; /* Желтая кнопка */
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.backButton:hover {
+  background-color: #ffa000; /* Темно-желтая кнопка при наведении */
+}
+
+.title {
+  font-size: 2.5em;
+  color: #f57f17; /* Оранжевый цвет заголовка */
+}
+
+.card {
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 50rem;
+  margin: 0 auto;
+}
+
+.card-img-top {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-text {
+  font-size: 1em;
+  color: #616161; /* Темный серый цвет текста */
+}
+
+.noImage {
+  width: 286px;
+  height: 180px;
+  background-color: #efeee9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
