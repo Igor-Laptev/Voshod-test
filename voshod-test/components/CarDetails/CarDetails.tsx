@@ -61,7 +61,8 @@ const CarDetail = (): JSX.Element => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    centerMode: true,
+    centerMode: false,
+    arrows: false,
     centerPadding: '40px',
     responsive: [
       {
@@ -75,6 +76,11 @@ const CarDetail = (): JSX.Element => {
     ],
   };
 
+  const uniqueImages = car.images?.filter(
+    (image, index, self) =>
+      index === self.findIndex((img) => img.image === image.image)
+  );
+
   const handleBackClick = () => {
     router.back();
   };
@@ -85,14 +91,14 @@ const CarDetail = (): JSX.Element => {
         <h1 className={styles.title}>
           {car.brand} {car.model}
         </h1>
-        {car.images && car.images.length > 0 ? (
+        {uniqueImages && uniqueImages.length > 1 ? (
           <Slider {...settings} className={styles.slider}>
-            {car.images.map((img) => (
+            {uniqueImages.map((img) => (
               <div key={img.id} className={styles.slide}>
                 <Image
                   src={img.image}
                   alt={`${car.brand} ${car.model}`}
-                  width={700}
+                  width={500}
                   height={500}
                   priority
                   className='card-img-top'
@@ -100,6 +106,17 @@ const CarDetail = (): JSX.Element => {
               </div>
             ))}
           </Slider>
+        ) : uniqueImages && uniqueImages.length === 1 ? (
+          <div className={styles.slide}>
+            <Image
+              src={uniqueImages[0].image}
+              alt={`${car.brand} ${car.model}`}
+              width={500}
+              height={500}
+              priority
+              className='card-img-top'
+            />
+          </div>
         ) : (
           <div className={styles.img}>
             <div className={`card-img-top ${styles.noImage}`}>

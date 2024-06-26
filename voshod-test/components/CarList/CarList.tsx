@@ -63,7 +63,20 @@ const CarList = (): JSX.Element => {
   };
 
   useEffect(() => {
-    fetchCars([], [], [], 1);
+    const savedFilters = JSON.parse(localStorage.getItem('filters') || '{}');
+    if (savedFilters.selectedBrands) {
+      setSelectedBrands(savedFilters.selectedBrands);
+    }
+    if (savedFilters.selectedModels) {
+      setSelectedModels(savedFilters.selectedModels);
+    }
+    if (savedFilters.selectedTarifs) {
+      setSelectedTarifs(savedFilters.selectedTarifs);
+    }
+    if (savedFilters.page) {
+      setPage(savedFilters.page);
+    }
+    fetchCars(savedFilters.selectedBrands || [], savedFilters.selectedModels || [], savedFilters.selectedTarifs || [], savedFilters.page || 1);
   }, []);
 
   useEffect(() => {
@@ -86,6 +99,16 @@ const CarList = (): JSX.Element => {
 
   useEffect(() => {
     fetchCars(selectedBrands, selectedModels, selectedTarifs, page);
+  }, [selectedBrands, selectedModels, selectedTarifs, page]);
+
+  useEffect(() => {
+    const filters = {
+      selectedBrands,
+      selectedModels,
+      selectedTarifs,
+      page,
+    };
+    localStorage.setItem('filters', JSON.stringify(filters));
   }, [selectedBrands, selectedModels, selectedTarifs, page]);
 
   const handleBrandChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
